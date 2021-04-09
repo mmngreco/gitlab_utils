@@ -11,7 +11,7 @@
 Also requires a `.env` file where you need to fill with the HOST and TOKEN
 in order to provide access to gitlab api.
 
-The content of `.env` file, looks like the following:
+Example of `.env` file:
 
 ```
 TOKEN=asfasdf-dfdfs
@@ -20,7 +20,7 @@ HOST=gitlab.com
 
 # Usage
 
-## Given url and estimate post to gitlab.
+## Given a url and an estimation post to gitlab.
 
 This requires a `votes.txt` file with url and estimates.
 
@@ -36,8 +36,14 @@ The issues will be located in `downloads` folder as markdown files.
 bash downloadIssues.sh 328 39
 ```
 
-## Given a milestone prints all issues and their time.
+## Given a milestone prints out all issues and their time estimation.
 
 ```bash
-bash getIssues.sh "sprint:39"
+bash getMilestone.sh "sprint:39"
+```
+
+## Given a group prints out all projects
+
+```bash
+bash getPorjectsByGroup.sh
 ```
