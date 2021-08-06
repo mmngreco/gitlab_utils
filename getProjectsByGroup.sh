@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # https://docs.gitlab.com/ce/api/issues.html#list-project-issues
+
 if [ -f .env ]; then
     source .env
 fi
@@ -16,14 +17,10 @@ if [[ ! -v GITLAB_HOST ]]; then
     '
     exit
 fi
-ENDPOINT="https://$GITLAB_HOST/api/v4/groups/253/projects"
-TMPL="curl --header \"PRIVATE-TOKEN: $GITLAB_TOKEN\" \"$ENDPOINT\"\n"
-MILESTONE="${1:-sprint:39}"
-SEP="\t"
 
-curl \
-    --header \
-    "PRIVATE-TOKEN: $GITLAB_TOKEN" \
-    "$ENDPOINT?scope=all&milestone=$MILESTONE&per_page=100" \
-    | jq -r ".[] | .name "
+group="${1:-253}"
+url="https://$GITLAB_HOST/api/v4/groups/$group/projects?scope=all&per_page=100"
+header="PRIVATE-TOKEN: $GITLAB_TOKEN"
+
+curl -S -s --header "$header" "$url" | jq -r ".[] | .name "
 

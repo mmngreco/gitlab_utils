@@ -23,7 +23,6 @@ fi
 
 PROJECT_ID=487
 ENDPOINT="http://$GITLAB_HOST/api/v4/projects/$PROJECT_ID"
-ISSUES="issues?iids[]="
 
 for iid in "$@"
 do

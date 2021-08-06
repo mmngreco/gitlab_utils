@@ -37,7 +37,7 @@ export GITLAB_TOKEN=asfasdf-dfdfs
 This requires a `votes.txt` file with url and estimates.
 
 ```bash
-bash votes2gitlab.sh ./votes.txt
+./votes2gitlab.sh ./votes.txt
 ```
 
 ## Given a issue id or a list of id's download their contents.
@@ -45,17 +45,19 @@ bash votes2gitlab.sh ./votes.txt
 The issues will be located in `downloads` folder as markdown files.
 
 ```bash
-bash downloadIssues.sh 328 39
+./downloadIssues.sh 328 39
 ```
 
 ## Given a milestone prints out all issues and their time estimation.
 
 ```bash
-bash getMilestone.sh "sprint:39"
+./getMilestone.sh "sprint:39"
 ```
 
 ## Given a group prints out all projects
 
+> For the moment only works with the group-id.
+
 ```bash
-bash getPorjectsByGroup.sh
+./getPorjectsByGroup.sh 253
 ```
