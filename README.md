@@ -3,19 +3,31 @@
 ## Requirements:
 
 - curl
-- awk
 - jq
 - bash
-- .env file
+- awk (only for `votes2gitlab`)
 
-Also requires a `.env` file where you need to fill with the HOST and TOKEN
-in order to provide access to gitlab api.
+Also requires the following variables:
+
+```
+GITLAB_HOST=gitlab.com
+GITLAB_TOKEN=asfasdf-dfdfs
+```
+
+You can define them writing it in a `.env` file or using `export` in your `bashrc`.
 
 Example of `.env` file:
 
 ```
-TOKEN=asfasdf-dfdfs
-HOST=gitlab.com
+GITLAB_HOST=gitlab.com
+GITLAB_TOKEN=asfasdf-dfdfs
+```
+
+Example of `bashrc`:
+
+```
+export GITLAB_HOST=gitlab.com
+export GITLAB_TOKEN=asfasdf-dfdfs
 ```
 
 # Usage
