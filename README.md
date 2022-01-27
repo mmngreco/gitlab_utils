@@ -6,6 +6,7 @@
 - jq
 - bash
 - awk (only for uploading times)
+- [bashly](https://github.com/DannyBen/bashly) (for development)
 
 Also requires the following variables, (example of `bashrc`):
 
@@ -21,3 +22,12 @@ export GITLAB_TOKEN=asfasdf-dfdfs
 ./gutils
 ```
 
+
+# Development
+
+
+After update any script in `src` requires execute the following command:
+
+```bash
+bashly gen
+```
