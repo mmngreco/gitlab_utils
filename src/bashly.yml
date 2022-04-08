@@ -1,0 +1,67 @@
+name: gutils
+help: Gitlab utils
+version: 0.1.0
+
+environment_variables:
+
+- name: GITLAB_HOST
+  help: The host used to retrieve information from.
+  default: etsgit1.ets.es
+  required: true
+
+- name: GITLAB_TOKEN
+  help: The token to login.
+  required: true
+
+commands:
+
+- name: download-issues
+  short: d
+  help: Download issues to a file.
+  flags:
+    - long: --issues
+      short: -i
+      arg: issues
+      help: Issues list
+      required: true
+    - long: --output
+      short: -o
+      arg: dir
+      help: Directory where the files will be written. It will be created if it doesn't exist.
+      required: true
+  examples:
+  - gutils download-issues "333 334" --ouput ./issues
+
+- name: download-time
+  short: down
+  help: Get issues and times from a milestone.
+  flags:
+    - long: --milestone
+      short: -m
+      arg: milestone
+      help: Milestone label.
+      required: true
+    - long: --projectid
+      short: -p
+      arg: projectid
+      help: Project id where the issues will be updated.
+      default: 324
+  examples:
+    - gutils download-time -m sprint:34
+
+- name: upload-time
+  short: up
+  help: Upload time to issues using a file.
+  flags:
+    - long: --file
+      short: -f
+      arg: file
+      help: File used to upload the time to each issue.
+      required: true
+    - long: --projectid
+      short: -p
+      arg: projectid
+      help: Project id where the issues will be updated.
+      default: 324
+  examples:
+    - gutils upload-time -f ./votes-example.txt
