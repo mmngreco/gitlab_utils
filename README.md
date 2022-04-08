@@ -9,12 +9,14 @@
 - awk (only for uploading times)
 - [bashly](https://github.com/DannyBen/bashly) (for development)
 
-
-We require the following variables, in order to provide access to gitlab api.
+We require the following variables, in order to provide access to GitLab API,
+and to use the commands.
 Example of `bashrc`:
 ```bash
 export GITLAB_HOST=gitlab.com
 export GITLAB_TOKEN=asfasdf-dfdfs
+export GUTILS_SEP=";"
+export GUTILS_PB_ID=101010
 ```
 
 More information on GitLab tokens can be found [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
