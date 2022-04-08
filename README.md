@@ -32,7 +32,6 @@ you can follow these steps as a workaround.
 
 # Usage
 
-<<<<<<< HEAD
 Note: For Windows Git Bash users, 
 for the alias to be effective you will have to launch 
 the script with `. <script>` instead of `bash <script>`.
