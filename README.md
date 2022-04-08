@@ -1,4 +1,4 @@
-# Gitlab Utils
+# Gitlab's Utils
 
 ## Requirements:
 
@@ -6,15 +6,15 @@
 - awk
 - [jq](https://github.com/stedolan/jq)
 - bash
-- .env file
+- awk (only for uploading times)
+- [bashly](https://github.com/DannyBen/bashly) (for development)
 
-We require an `.env` file where you need to fill with the `HOST` and `TOKEN` fields
-in order to provide access to gitlab api.
 
-The content of the `.env` file should look like this:
-```
-TOKEN=asfasdf-dfdfs
-HOST=gitlab.com
+We require the following variables, in order to provide access to gitlab api.
+Example of `bashrc`:
+```bash
+export GITLAB_HOST=gitlab.com
+export GITLAB_TOKEN=asfasdf-dfdfs
 ```
 
 More information on GitLab tokens can be found [here](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html).
@@ -32,28 +32,28 @@ you can follow these steps as a workaround.
 
 # Usage
 
-Note: For Windows Git Bash users, for the alias to be effective you will have to launch the script with `. <script>` instead of `bash <script>`.
+<<<<<<< HEAD
+Note: For Windows Git Bash users, 
+for the alias to be effective you will have to launch 
+the script with `. <script>` instead of `bash <script>`.
 
-It should work with the [latter](https://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment/415444#415444), but for some reason the alias is lost. 
+It should work with the 
+[latter](https://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment/415444#415444), 
+but for some reason the alias is lost. 
 
 ## Given url and estimate post to gitlab.
 
 This requires a `votes.txt` file with url and estimates.
 
 ```bash
-bash votes2gitlab.sh ./votes.txt
+./gutils
 ```
 
-## Given a issue id or a list of id's download their contents.
+# Development
 
-The issues will be located in `downloads` folder as markdown files.
 
-```bash
-bash downloadIssues.sh 328 39
-```
-
-## Given a milestone prints all issues and their time.
+After update any script in `src` requires execute the following command:
 
 ```bash
-bash getIssues.sh "sprint:39"
+bashly gen
 ```
